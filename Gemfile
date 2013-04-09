@@ -22,6 +22,26 @@ end
 
 gem 'jquery-rails'
 
+gem 'pg'
+
+group :development do
+	gem 'better_errors'
+	gem 'pry-rails'
+end
+
+group :tools do
+    gem 'rb-fsevent', :require => false
+    gem 'guard-test'
+    gem 'guard-livereload'
+end
+
+group :test do 
+    gem "factory_girl_rails"
+    gem "database_cleaner"
+    gem "capybara"
+    gem "capybara-webkit"
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
