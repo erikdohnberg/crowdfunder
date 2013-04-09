@@ -29,6 +29,8 @@ group :development do
 	gem 'pry-rails'
 end
 
+gem 'sorcery'
+
 group :tools do
     gem 'rb-fsevent', :require => false
     gem 'guard-test'
