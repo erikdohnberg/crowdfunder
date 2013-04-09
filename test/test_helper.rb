@@ -14,5 +14,4 @@ class ActiveSupport::TestCase
   	include Capybara::DSL
   	Capybara.app = Crowdfunder::Application
   end
-
 end

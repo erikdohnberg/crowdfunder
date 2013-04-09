@@ -1,0 +1,18 @@
+<div class="navbar">
+	  <div class="navbar-inner">
+	    <a class="brand" href="/">CrowdFunder</a>
+	    <ul class="nav"> 
+	    	<% if controller_name == "home" %>
+	      	<li class="active"><a href="/">Home</a></li>
+	      	<% else %>
+	      	<li><a href="/">Home</a></li>
+	      	<% end %>
+	      	<% if controller_name == "projects" %>
+	      	<li class="active"><a href="projects#index">Projects</a></li>
+	      	<% else %>
+	      	<li><a href="projects#index">Projects</a></li>
+	      	<% end %>
+
+	    </ul>
+	  </div>
+	</div>
