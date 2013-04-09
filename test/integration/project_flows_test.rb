@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class ProjectFlowsTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
 
   test "the index page lists all out projects" do
   	# Create a bunch of projects (3) in the DG (using FG)
