@@ -26,17 +26,6 @@ Rails.application.config.sorcery.configure do |config|
   #
   # config.cookie_domain =
 
-  
-  # -- remember_me --
-  # allow the remember_me cookie to settable through AJAX
-  # Default: `true`
-  #
-  # user.remember_me_httponly =
-  
-  # How long in seconds the session length will be
-  # Default: `604800`
-  #
-  # user.remember_me_for =
 
   # -- session timeout --
   # How long in seconds to keep the session alive.
@@ -91,17 +80,6 @@ Rails.application.config.sorcery.configure do |config|
   # config.ca_file =
 
 
-  # For information about LinkedIn API:
-  # - user info fields go to https://developer.linkedin.com/documents/profile-fields
-  # - access permissions go to https://developer.linkedin.com/documents/authentication#granting
-  #
-  # config.linkedin.key = ""
-  # config.linkedin.secret = ""
-  # config.linkedin.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=linkedin"
-  # config.linkedin.user_info_fields = ['first-name', 'last-name']
-  # config.linkedin.user_info_mapping = {first_name: "firstName", last_name: "lastName"}
-  # config.linkedin.access_permissions = ['r_basicprofile'] 
-  #
   # Twitter wil not accept any requests nor redirect uri containing localhost,
   # make sure you use 0.0.0.0:3000 to access your app in development
   #
@@ -114,7 +92,6 @@ Rails.application.config.sorcery.configure do |config|
   # config.facebook.secret = ""
   # config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
   # config.facebook.user_info_mapping = {:email => "name"}
-  # config.facebook.access_permissions = ["email", "publish_stream"]
   #
   # config.github.key = ""
   # config.github.secret = ""
@@ -125,11 +102,6 @@ Rails.application.config.sorcery.configure do |config|
   # config.google.secret = ""
   # config.google.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=google"
   # config.google.user_info_mapping = {:email => "email", :username => "name"}
-  #
-  # config.vk.key = ""
-  # config.vk.secret = ""
-  # config.vk.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=vk"
-  # config.vk.user_info_mapping = {:login => "domain", :name => "full_name"}
   #
   # To use liveid in development mode you have to replace mydomain.com with
   # a valid domain even in development. To use a valid domain in development
@@ -147,7 +119,7 @@ Rails.application.config.sorcery.configure do |config|
     # specify username attributes, for example: [:username, :email].
     # Default: `[:username]`
     #
-    # user.username_attribute_names =
+    user.username_attribute_names = [:email]
 
 
     # change *virtual* password attribute, the one which is used until an encrypted one is generated.
@@ -159,7 +131,7 @@ Rails.application.config.sorcery.configure do |config|
     # downcase the username before trying to authenticate, default is false
     # Default: `false`
     #
-    # user.downcase_username_before_authenticating =
+    user.downcase_username_before_authenticating = true
 
 
     # change default email attribute.
