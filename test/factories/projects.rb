@@ -6,6 +6,6 @@ FactoryGirl.define do
   	title "Wifi-enabled Shoes"
   	teaser "Control your minions!"
   	description "These are the coolest shoes ever"
-  	goals 12000
+  	goal 12000
   end
 end
