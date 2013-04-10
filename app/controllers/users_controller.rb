@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new params[:user]
     if @user.save
       auto_login(@user) # Log them in right away. No account verification required
-      redirect_to root_path, notice: "Account created."
+      redirect_to root_path, notice: "Account created." # Same as old method: ":notice => 'Account created'"
     else
       render :new
     end
