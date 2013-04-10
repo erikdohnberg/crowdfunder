@@ -1,5 +1,5 @@
 <div class="navbar">
-	  <div class="navbar-inner">
+	<div class="navbar-inner">
 	    <a class="brand" href="/">CrowdFunder</a>
 	    <ul class="nav"> 
 	    	<% if controller_name == "home" %>
@@ -12,6 +12,14 @@
 	      	<% else %>
 	      	<li><a href="projects">Projects</a></li>
 	      	<% end %>
+
+	<div class="pull-right">
+        <% if logged_in? %>
+          <%= link_to 'Logout', '#', class: 'btn' %>
+        <% else %>
+          <%= link_to 'Sign Up', [:new, :user], class: 'btn btn-primary' %>
+        <% end %>
+      </div>
 
 	    </ul>
 	  </div>
