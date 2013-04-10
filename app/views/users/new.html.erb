@@ -6,16 +6,28 @@
 
 <%= form_for @user do |f| %>
 
-  <div class="span6">
-    <%= f.text_field :first_name, placeholder: "First Name", class: "input-lock-level" %>
-    <%= f.text_field :last_name, placeholder: "Last Name", class: "input-lock-level" %>
+	<div class="span6">
 
-    <%= f.text_field :email, placeholder: "E-mail Address", class: "input-lock-level" %>
-    <%= f.password_field :password, placeholder: "Password", class: "input-lock-level" %>
-    
-    <div class="form-actions">
-      <%= f.submit 'Create Account', class: 'btn btn-primary' %>
-    </div>
-  </div>
+		<% unless f.object.errors.empty? %>
+			<div class="alert alert-error">
+				<strong>Try again after fixing the following things:</strong><br/>
+				<ul>
+					<% f.object.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+		<%= f.text_field :first_name, placeholder: "First Name", class: "input-block-level" %>
+		<%= f.text_field :last_name, placeholder: "Last Name", class: "input-block-level" %>
+
+		<%= f.text_field :email, placeholder: "E-mail Address", class: "input-block-level" %>
+		<%= f.password_field :password, placeholder: "Password", class: "input-block-level" %>
+
+		<div class="form-actions">
+			<%= f.submit 'Create Account', class: 'btn btn-primary' %>
+		</div>
+	</div>
 
 <% end %>
