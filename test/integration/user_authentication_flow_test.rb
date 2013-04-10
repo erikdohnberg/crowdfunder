@@ -41,11 +41,11 @@ class UserAuthenticationFlowTest < ActionDispatch::IntegrationTest
   test "logout" do
     # Login as user so we can do test (setup)
     Capybara.current_driver = Capybara.javascript_driver
-    ser = get_signed_in_user
+    user = get_signed_in_user
 
     # Actual test
     visit '/projects'
-    click_button 'Logout'
+    click_link 'Logout'
     assert_equal root_path, current_path
 
   end
@@ -57,7 +57,7 @@ class UserAuthenticationFlowTest < ActionDispatch::IntegrationTest
   end
 
   test "unsuccessful log in" do
-    # Figure this one out yourself
+  # Figure this one out yourself
   end
 
 end
