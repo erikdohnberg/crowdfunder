@@ -1,9 +1,9 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-    <a class="brand" href="#">CrowdFunder</a>
+    <a class="brand" href="/">CrowdFunder</a>
     <ul class="nav">
-      <li class="<%= 'active' if controller_name == 'welcome'%>"><a href="/">Home</a></li>
+      <li class="<%= 'active' if controller_name == 'home'%>"><a href="/">Home</a></li>
       <li class="<%= 'active' if controller_name == 'projects' %>">
         <%= link_to "Projects", projects_url %>
       </li>
