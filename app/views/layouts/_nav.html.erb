@@ -1,25 +1,13 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="#">CrowdFunder</a>
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li class="<%= 'active' if @nav == :home %>">
-            <%= link_to 'Home', :root %>
-          </li>
-          <li class="<%= 'active' if @nav == :projects %>">
-            <%= link_to 'Projects', :projects %>
-          </li>
-
-          <% if logged_in? %>
-            <li class="divider-vertical"></li>
-            <li class="<%= 'active' if @nav == :my_projects %>">
-              <%= link_to 'My Projects', [:my, :projects] %>
-            <li>
-          <% end %>
-
-        </ul>
-      </div><!--/.nav-collapse -->
+    <a class="brand" href="#">CrowdFunder</a>
+    <ul class="nav">
+      <li class="<%= 'active' if controller_name == 'welcome'%>"><a href="/">Home</a></li>
+      <li class="<%= 'active' if controller_name == 'projects' %>">
+        <%= link_to "Projects", projects_url %>
+      </li>
+    </ul>
 
       <div class="pull-right">
         <% if logged_in? %>
@@ -29,7 +17,5 @@
           <%= link_to 'Sign In', [:new, :session], class: 'btn btn-success' %>
         <% end %>
       </div>
-
-    </div>
-  </div>
+  	</div>
 </div>
