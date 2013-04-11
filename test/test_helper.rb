@@ -37,6 +37,16 @@ class ActiveSupport::TestCase
       user
     end
 
+    def get_completed_form
+      # LOGIN AS A USER SO WE CAN DO THE TEST (SETUP)
+      get_signed_in_user
+      visit new_my_projects_url
+      fill_in :title, :with => "Test Project"
+      fill_in :teaser, :with => "World changing test project!"
+      fill_in :description, :with => "Test test test test test test test test test test test test test!!!"
+      fill_in :goal, :with => "1000"
+    end
+
   end
 
 end

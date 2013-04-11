@@ -2,11 +2,12 @@
 <div class="row">
   <div class="span9">
 		<ul class="project-list">
-		<% @projects.each do |project| %>
-			<li><%= link_to project.title, project %></li>
-			<p><%= project.teaser %></p>
-			<p><%= link_to 'Edit My Project', [:edit, :project], class: 'btn btn-primary'  %>
-		<% end %>
+			<% @projects.each do |project| %>
+				<li><%= link_to project.title, project %></li>
+				<p><%= project.teaser %></p>
+				<p><%= link_to 'Edit My Project', edit_my_project_path(project), class: 'btn btn-info'  %>
+			<% end %>
 		</ul>
+		<p><%= link_to 'Add New Project', [:new, :my, :project], class: 'btn btn-primary' %></p>
 	</div>
 </div>

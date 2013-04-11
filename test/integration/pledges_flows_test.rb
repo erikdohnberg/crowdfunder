@@ -16,7 +16,7 @@ class PledgeFlowsTest < ActionDispatch::IntegrationTest
 	end
 
 	test "authenticated user can pledge valid amount" do 
-  	user = setup_signed_in_user
+  	user = get_signed_in_user
 		
 		visit project_path(@project)
 		click_link 'Back This Project'	
