@@ -4,7 +4,7 @@ Crowdfunder::Application.routes.draw do
   # first created -> highest priority.
 
   resources :projects do
-    resources :pledges :only => [:new, :create]
+    resources :pledges, :only => [:new, :create]
   end
 
   resources :users, except: [:index]

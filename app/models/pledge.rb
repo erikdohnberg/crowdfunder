@@ -1,6 +1,8 @@
 class Pledge < ActiveRecord::Base
-	belongs_to :projects
-	belongs_to :user
+	
+  attr_accessible :amount
 
-	attr_accessible :description, :goal, :teaser, :title
+  validates :amout, :presence => true
+  validates :user_id, :presence => true
+  validates :project_id, :presence => true
 end
