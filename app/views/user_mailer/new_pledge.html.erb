@@ -1,0 +1,12 @@
+<p>Hey <%= @owner.first_name %> </p>
+
+<p>Good news!
+	Your project "<%= link_to @project.title, project_url(@project), :host => "localhost:3000" %></a>" was just backed by <%= @backer.first_name %> for $<%= @pledge.amount %>!!
+</p>
+
+<hr/>
+
+<p>
+	Best of luck,<br>
+	The CrowdFunder Team
+</p>
