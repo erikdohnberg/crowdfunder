@@ -16,9 +16,8 @@ user = User.create!(first_name: "John", last_name: "Doe", email: "john@doe.com",
         description: "description #{i}", goal: 13000)
 end
 
-user2 = User.create!(first_name: "Erik", last_name: "Dohnberg", email: "erik@dohnberg.com", password: "qwerty")
-
-5.times do |u|
-	user.projects.create!(title: "Project #{u}, teaser: "Teaser text #{u}",
-        description: "description #{u}", goal: 13000)
+user2 = User.create!(first_name: "Khurram", last_name: "Virani", email: "kvirani@bitmakerlabs.com", password: "kviranikvirani")
+5.times do |i|
+    user.projects.create!(title: "Project #{i}", teaser: "Teaser text #{i}",
+        description: "description #{i}", goal: 13000)
 end

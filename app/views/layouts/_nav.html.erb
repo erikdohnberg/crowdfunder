@@ -5,6 +5,9 @@
     <ul class="nav">
       <li class="<%= 'active' if controller_name == 'home'%>"><a href="/">Home</a></li>
       <li class="<%= 'active' if controller_name == 'projects' %>">
+        <%= link_to "Projects", projects_path %>
+      </li>
+      <li class="<%= 'active' if controller_name == 'my/projects' %>">
         <%= link_to "My Projects", my_projects_path %>
       </li>
     </ul>
