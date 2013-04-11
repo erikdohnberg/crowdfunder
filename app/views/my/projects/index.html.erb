@@ -3,7 +3,7 @@
   <div class="span9">
 		<ul class="project-list">
 		<% @projects.each do |project| %>
-			<li><%= link_to my.project.title, project %></li>
+			<li><%= link_to project.title, project %></li>
 			<p><%= project.teaser %></p>
 			<p><%= link_to 'Edit My Project', [:edit, :project], class: 'btn btn-primary'  %>
 		<% end %>

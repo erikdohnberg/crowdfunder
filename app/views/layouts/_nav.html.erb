@@ -3,11 +3,11 @@
     <div class="container">
     <a class="brand" href="/">CrowdFunder</a>
     <ul class="nav">
-      <li class="<%= 'active' if controller_name == 'home'%>"><a href="/">Home</a></li>
-      <li class="<%= 'active' if controller_name == 'projects' %>">
+      <li class="<%= 'active' if params[:controller] == 'home'%>"><a href="/">Home</a></li>
+      <li class="<%= 'active' if params[:controller] == 'projects' %>">
         <%= link_to "Projects", projects_path %>
       </li>
-      <li class="<%= 'active' if controller_name == 'my/projects' %>">
+      <li class="<%= 'active' if params[:controller] == 'my/projects' %>">
         <%= link_to "My Projects", my_projects_path %>
       </li>
     </ul>
