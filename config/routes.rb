@@ -3,8 +3,13 @@ Crowdfunder::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  resources :projects do
-    resources :pledges, :only => [:new, :create]
+  resources :projects do # '/projects/2'
+    resources :pledges, :only => [:new, :create] # '/projects/2/pledges/new'
+  end
+
+  # Adds a prefix to the url: '/my/projects/2' etc.
+  namespace :my do
+    resources :projects
   end
 
   resources :users, except: [:index]

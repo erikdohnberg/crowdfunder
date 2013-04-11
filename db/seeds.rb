@@ -12,6 +12,13 @@ Project.destroy_all
 user = User.create!(first_name: "John", last_name: "Doe", email: "john@doe.com", password: "jdoe111")
 
 50.times do |i|
-    project1 = user.projects.create!(title: "Project #{i}", teaser: "Teaser text #{i}",
+    user.projects.create!(title: "Project #{i}", teaser: "Teaser text #{i}",
         description: "description #{i}", goal: 13000)
+end
+
+user2 = User.create!(first_name: "Erik", last_name: "Dohnberg", email: "erik@dohnberg.com", password: "qwerty")
+
+5.times do |u|
+	user.projects.create!(title: "Project #{u}, teaser: "Teaser text #{u}",
+        description: "description #{u}", goal: 13000)
 end
