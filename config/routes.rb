@@ -9,7 +9,9 @@ Crowdfunder::Application.routes.draw do
 
   # Adds a prefix to the url: '/my/projects/2' etc.
   namespace :my do
-    resources :projects
+    resources :projects, :except => [:show] do
+      resources :images
+    end
   end
 
   resources :users, except: [:index]
