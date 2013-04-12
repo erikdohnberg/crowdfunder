@@ -3,9 +3,11 @@
   <div class="span9">
 		<ul class="project-list">
 			<% @projects.each do |project| %>
-				<li><%= link_to project.title, project %></li>
-				<p><%= project.teaser %></p>
-				<p><%= link_to 'Edit My Project', edit_my_project_path(project), class: 'btn btn-info'  %>
+				<li><h3><%= link_to project.title, project %></li></h3>
+				<p><em><%= project.teaser %></em></p>
+				<p><h4>$<%= project.goal %> Goal</h4></p>
+				<p><%= link_to 'Edit Project', edit_my_project_path(project), class: 'btn btn-info'  %>
+				<p><%= link to "Delete Project", my_project_path(project), method: :delete, class: "btn btn-danger" %>
 			<% end %>
 		</ul>
 		<p><%= link_to 'Add New Project', [:new, :my, :project], class: 'btn btn-primary' %></p>
